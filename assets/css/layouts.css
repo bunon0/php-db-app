@@ -45,8 +45,13 @@
 * l-main
 */
 
+.l-main {
+	flex: 1;
+}
+
 .l-main__inner {
 	width: 100%;
+	height: 100%;
 	max-width: var(--container-md);
 	padding: 0 var(--padding-pc);
 	margin: 0 auto;
@@ -59,9 +64,6 @@
 	height: max(4rem, 40px);
 	background-color: var(--c-primary);
 	color: var(--c-base);
-	position: sticky;
-	top: 100vh;
-	width: 100%;
 }
 
 .l-footer__inner {

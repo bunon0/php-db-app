@@ -27,7 +27,7 @@ a {
 	--c-sub: #2e4961;
 	--c-primary: #0a659e;
 	--c-secondary: #1f777f;
-	--c-tertiary: #1f777f;
+	--c-tertiary: #becacb;
 	/* Font */
 	--f-family-main: 'Noto Sans JP', sans-serif;
 	/* Container */
@@ -53,6 +53,8 @@ body {
 	color: var(--c-sub);
 	height: 100%;
 	min-height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 a {

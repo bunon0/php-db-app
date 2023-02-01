@@ -19,6 +19,7 @@ $url = $get_domain . $get_uri;
   <!-- Original CSS -->
   <link rel="stylesheet" href="../assets/css/common.css">
   <link rel="stylesheet" href="../assets/css/layouts.css">
+  <link rel="stylesheet" href="../assets/css/page.css">
 </head>
 
 <body>
