@@ -1,3 +1,9 @@
+<?php
+$get_domain = $_SERVER['SERVER_NAME'];
+$get_uri = $_SERVER['REQUEST_URI'];
+$url = $get_domain . $get_uri;
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -6,8 +12,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>シンプル商品管理</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Original CSS -->
   <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/layouts.css">
 </head>
 
 <body>
-  <header></header>
+  <header class="l-header">
+    <div class="l-header__inner">
+      <a href="../" class="l-header__logo">シンプル商品管理アプリ</a>
+      <!-- TopページのみNavを表示 -->
+      <?php
+      if ($url === $get_domain . '/') :
+      ?>
+        <nav class="l-header__nav">
+          <ul class="l-header__nav-lists">
+            <li class="l-header__nav-list">
+              <a href="../read.php" class="l-header__nav-link">商品一覧</a>
+            </li>
+          </ul>
+        </nav>
+      <?php endif; ?>
+
+    </div>
+  </header>
