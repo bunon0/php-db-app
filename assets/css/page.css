@@ -1,0 +1,30 @@
+/*
+* top-page
+*/
+.p-top {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	margin-top: 12rem;
+}
+
+.p-top__title {
+	text-align: center;
+}
+.p-top__title-read {
+	text-align: center;
+	margin-top: 0.8rem;
+}
+
+.p-top__btn-wrapper {
+	text-align: center;
+	margin-top: 4rem;
+}
+.p-top__btn {
+	display: inline-block;
+	background-color: var(--c-secondary);
+	color: var(--c-base);
+	padding: 0.8rem 1.6rem;
+	border-radius: 0.4rem;
+}
