@@ -27,6 +27,7 @@
 	color: var(--c-base);
 	padding: 0.8rem 1.6rem;
 	border-radius: 0.4rem;
+	font-size: 1.8rem;
 }
 
 /*
@@ -42,9 +43,17 @@
 	align-items: center;
 }
 
+.p-read__message {
+	font-size: 1.8rem;
+	color: var(--c-secondary);
+	margin-top: 2rem;
+}
+
 .p-read__widget {
 	margin-top: 4rem;
 	width: 100%;
+	display: flex;
+	align-items: center;
 }
 
 .p-read__widget-filter {
@@ -59,19 +68,27 @@
 	color: var(--c-secondary);
 }
 
-.p-read__widget-desc i,
-.p-read__widget-asc i {
-	font-size: 2.5rem;
+.p-read__widget-asc i,
+.p-read__widget-desc i {
+	font-size: 3rem;
 }
 
-.p-read__widget-asc {
-	margin-left: 0.4rem;
+.p-read__widget-desc {
+	margin-left: 0.8rem;
 }
 
 .p-read__widget-input {
-	margin-left: 1.6rem;
-	padding: 0.4rem 0.2rem;
+	margin-left: 4rem;
+	padding: 0.6rem 0.4rem;
 	width: max(20rem, 200px);
+}
+
+.p-read__widget-btn {
+	display: inline-block;
+	background-color: var(--c-secondary);
+	color: var(--c-base);
+	padding: 0.8rem 1.2rem;
+	border-radius: 0.2rem;
 }
 
 .p-read__table-wrapper {
@@ -127,4 +144,75 @@
 		font-size: max(1.2rem, 12px);
 		margin-bottom: 0.4rem;
 	}
+}
+
+/*
+* create-page
+*/
+.p-create {
+	padding: 6rem 0;
+	width: 100%;
+	width: min(100%, 400px);
+	margin: 0 auto;
+}
+
+.p-create__contents {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.p-create__btn-wrapper {
+	text-align: left;
+	margin-top: 4rem;
+}
+
+.p-create__btn-back {
+	display: inline-block;
+	background-color: var(--c-secondary);
+	color: var(--c-base);
+	padding: 0.4rem 0.8rem;
+	border-radius: 0.2rem;
+	border: none;
+	font-size: 1.8rem;
+}
+
+.p-create__form {
+	margin-top: 4rem;
+	width: 100%;
+}
+
+.p-create__form-part:not(:first-of-type) {
+	margin-top: 1.6rem;
+}
+
+.p-create__form-input {
+	display: inline-block;
+	width: 100%;
+	padding: 0.8rem 1.6rem;
+	margin-top: 0.4rem;
+}
+
+.p-create__form-select {
+	display: inline-block;
+	width: 100%;
+	padding: 0.8rem 1.6rem;
+	margin-top: 0.4rem;
+}
+
+.p-create__form-btn-wrapper {
+	text-align: center;
+	margin-top: 3rem;
+}
+
+.p-create__form-submit {
+	display: inline-block;
+	background-color: var(--c-secondary);
+	color: var(--c-base);
+	padding: 0.8rem 1.2rem;
+	width: min(100%, 280px);
+	border-radius: 0.2rem;
+	border: none;
+	font-size: 1.8rem;
 }
