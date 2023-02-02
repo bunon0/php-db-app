@@ -3,15 +3,23 @@ require_once(__DIR__ . '/config.php');
 require_once(__DIR__ . '/libs/FormSanitize.php');
 
 
-$test = new FormSanitize('<p>hello</p>', ENT_QUOTES, 'UTF-8');
-$test = $test->sanitize();
-var_dump($test);
-
 try {
-  if (isset($_GET)) {
-  }
+  // urlにパラメータの有無で処理を分ける
+  if (isset($_GET['sort'])) {
+    $get_sort = new FormSanitize($_GET['sort'], ENT_QUOTES, 'UTF-8');
+    $get_sort = $get_sort->sanitize();
 
-  $sql = 'SELECT * FROM products';
+    // sortパラメータの値でsqlを変更する
+    if ($get_sort === 'desc') {
+      $sql = 'SELECT * FROM products ORDER BY updated_at DESC';
+    } else if ($get_sort === 'asc') {
+      $sql = 'SELECT * FROM products ORDER BY updated_at ASC';
+    } else {
+      $sql = 'SELECT * FROM products ORDER BY product_code ASC';
+    }
+  } else {
+    $sql = 'SELECT * FROM products';
+  }
   $stmt = $dbh->query($sql);
   $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $dbh = null;
@@ -31,11 +39,11 @@ require_once(__DIR__ . '/layouts/header.php')
         <h1 class="p-read__title">商品一覧</h1>
         <div class="p-read__widget">
           <div class="p-read__widget-sort">
-            <a href="./read.php?sort=desc" class="p-read__widget-desc">
-              <i class="fa-solid fa-arrow-down-z-a"></i>
-            </a>
             <a href="./read.php?sort=asc" class="p-read__widget-asc">
-              <i class="fa-solid fa-arrow-up-a-z"></i>
+              <i class="fa-solid fa-arrow-down-1-9"></i>
+            </a>
+            <a href="./read.php?sort=desc" class="p-read__widget-desc">
+              <i class="fa-solid fa-arrow-down-9-1"></i>
             </a>
           </div>
         </div>
