@@ -42,10 +42,29 @@
 	align-items: center;
 }
 
+.p-read__widget {
+	margin-top: 4rem;
+}
+
+.p-read__widget-desc,
+.p-read__widget-asc {
+	display: inline-block;
+	color: var(--c-secondary);
+}
+
+.p-read__widget-desc i,
+.p-read__widget-asc i {
+	font-size: 2.5rem;
+}
+
+.p-read__widget-asc {
+	margin-left: 0.4rem;
+}
+
 .p-read__table {
 	table-layout: fixed;
 	border-collapse: collapse;
-	margin-top: 4rem;
+	margin-top: 1rem;
 }
 
 .p-read__table-th,
