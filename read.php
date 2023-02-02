@@ -3,7 +3,17 @@ require_once(__DIR__ . '/config.php');
 require_once(__DIR__ . '/libs/FormSanitize.php');
 
 try {
-  // sortパラメータが渡された時の処理
+  // create_countパラメータが渡された時の処理
+  if (!empty($_GET['create_count'])) {
+    $count = new FormSanitize($_GET['create_count'], ENT_QUOTES, 'UTF-8');
+    $count = $count->sanitize();
+    $message = "商品情報を{$count}件追加しました。";
+  } else {
+    $message = null;
+  }
+
+
+  // GET - sortパラメータが渡された時の処理
   if (!empty($_GET['sort'])) {
     $sort = new FormSanitize($_GET['sort'], ENT_QUOTES, 'UTF-8');
     $sort = $sort->sanitize();
@@ -11,7 +21,7 @@ try {
     $sort = null;
   }
 
-  // keywordパラメータが渡された時の処理
+  // GET - keywordパラメータが渡された時の処理
   if (!empty($_GET['keyword'])) {
     $get_keyword = new FormSanitize($_GET['keyword'], ENT_QUOTES, 'UTF-8');
     $get_keyword = $get_keyword->sanitize();
@@ -28,12 +38,10 @@ try {
   } else {
     $sql = 'SELECT * FROM products WHERE product_name LIKE :keyword ORDER BY product_code ASC';
   }
-
   $stmt = $dbh->prepare($sql);
   $stmt->bindValue(':keyword', $keyword, PDO::PARAM_STR);
   $stmt->execute();
   $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 
   $dbh = null;
 } catch (PDOException $e) {
@@ -50,6 +58,9 @@ require_once(__DIR__ . '/layouts/header.php')
     <div class="p-read">
       <div class="p-read__contents">
         <h1 class="p-read__title">商品一覧</h1>
+        <?php if ($message) : ?>
+          <p class="p-read__message"><?= $message; ?></p>
+        <?php endif; ?>
         <div class="p-read__widget">
           <div class="p-read__widget-filter">
             <div class="p-read__widget-sort">
@@ -64,6 +75,11 @@ require_once(__DIR__ . '/layouts/header.php')
               <input type="hidden" name="sort" value="<?= $sort; ?>">
               <input class="p-read__widget-input" type="text" name="keyword" value="<?= $get_keyword; ?>" placeholder="商品名で検索">
             </form>
+          </div>
+          <div class="p-read__widget-register">
+            <a href="./create.php" class="p-read__widget-btn">
+              商品登録
+            </a>
           </div>
         </div>
 
