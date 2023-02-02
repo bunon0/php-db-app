@@ -28,3 +28,64 @@
 	padding: 0.8rem 1.6rem;
 	border-radius: 0.4rem;
 }
+
+/*
+* read-page
+*/
+.p-read {
+	padding: 6rem 0;
+}
+
+.p-read__contents {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.p-read__table {
+	table-layout: fixed;
+	border-collapse: collapse;
+	margin-top: 4rem;
+}
+
+.p-read__table-th,
+.p-read__table-td {
+	padding: 0.8rem 1.6rem;
+}
+
+.p-read__table-th {
+	border-bottom: max(0.15rem, 1.5px) solid rgba(var(--c-sub-rgb), 100%);
+}
+
+.p-read__table-td {
+	border-bottom: max(0.1rem, 1px) solid rgba(var(--c-sub-rgb), 30%);
+	text-align: center;
+}
+
+@media (max-width: 992px) {
+	.p-read__table {
+		border-collapse: separate;
+		border-spacing: 0 4rem;
+	}
+
+	.p-read__table-row--head {
+		display: none;
+	}
+
+	.p-read__table-td {
+		display: block;
+		font-size: max(1.8rem, 18px);
+	}
+
+	.p-read__table-td:first-of-type {
+		background-color: var(--c-secondary);
+		color: var(--c-base);
+	}
+
+	.p-read__table-td::before {
+		content: attr(data-label);
+		display: block;
+		font-size: max(1.2rem, 12px);
+		margin-bottom: 0.4rem;
+	}
+}
