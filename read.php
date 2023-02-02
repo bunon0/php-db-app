@@ -1,6 +1,16 @@
 <?php
 require_once(__DIR__ . '/config.php');
+require_once(__DIR__ . '/libs/FormSanitize.php');
+
+
+$test = new FormSanitize('<p>hello</p>', ENT_QUOTES, 'UTF-8');
+$test = $test->sanitize();
+var_dump($test);
+
 try {
+  if (isset($_GET)) {
+  }
+
   $sql = 'SELECT * FROM products';
   $stmt = $dbh->query($sql);
   $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -19,6 +29,17 @@ require_once(__DIR__ . '/layouts/header.php')
     <div class="p-read">
       <div class="p-read__contents">
         <h1 class="p-read__title">商品一覧</h1>
+        <div class="p-read__widget">
+          <div class="p-read__widget-sort">
+            <a href="./read.php?sort=desc" class="p-read__widget-desc">
+              <i class="fa-solid fa-arrow-down-z-a"></i>
+            </a>
+            <a href="./read.php?sort=asc" class="p-read__widget-asc">
+              <i class="fa-solid fa-arrow-up-a-z"></i>
+            </a>
+          </div>
+        </div>
+
         <div class="p-read__table-wrapper">
           <table class="p-read__table">
             <tr class="p-read__table-row p-read__table-row--head">
