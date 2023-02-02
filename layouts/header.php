@@ -35,7 +35,7 @@ $url = $get_domain . $get_uri;
         <nav class="l-header__nav">
           <ul class="l-header__nav-lists">
             <li class="l-header__nav-list">
-              <a href="../read.php" class="l-header__nav-link">商品一覧</a>
+              <a href="../read.php" class="l-header__nav-link">商品一覧へ</a>
             </li>
           </ul>
         </nav>
