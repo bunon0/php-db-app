@@ -2,7 +2,7 @@
 * l-header
  */
 .l-header {
-	height: max(6rem, 60px);
+	min-height: max(6rem, 60px);
 	background-color: var(--c-primary);
 	color: var(--c-base);
 }
@@ -61,7 +61,7 @@
 * l-footer
 */
 .l-footer {
-	height: max(4rem, 40px);
+	min-height: max(4rem, 40px);
 	background-color: var(--c-primary);
 	color: var(--c-base);
 }

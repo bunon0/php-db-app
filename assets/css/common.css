@@ -25,6 +25,7 @@ a {
 	/* Color */
 	--c-base: #ecf1f3;
 	--c-sub: #2e4961;
+	--c-sub-rgb: 46, 73, 97;
 	--c-primary: #0a659e;
 	--c-secondary: #1f777f;
 	--c-tertiary: #becacb;
@@ -34,6 +35,11 @@ a {
 	--container-md: 100rem;
 	/* Padding */
 	--padding-pc: 4rem;
+	/* breakpoint */
+	--mq-small: 375px;
+	--mq-medium: 768px;
+	--mq-large: 992px;
+	--mq-exlarge: 1200px;
 }
 
 /*
