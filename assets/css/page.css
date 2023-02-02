@@ -44,6 +44,13 @@
 
 .p-read__widget {
 	margin-top: 4rem;
+	width: 100%;
+}
+
+.p-read__widget-filter {
+	display: flex;
+	align-items: center;
+	margin-right: auto;
 }
 
 .p-read__widget-desc,
@@ -61,10 +68,23 @@
 	margin-left: 0.4rem;
 }
 
+.p-read__widget-input {
+	margin-left: 1.6rem;
+	padding: 0.4rem 0.2rem;
+	width: max(20rem, 200px);
+}
+
+.p-read__table-wrapper {
+	width: 100%;
+	margin-top: 1.2rem;
+}
+
 .p-read__table {
 	table-layout: fixed;
 	border-collapse: collapse;
 	margin-top: 1rem;
+	width: 100%;
+	white-space: nowrap;
 }
 
 .p-read__table-th,
