@@ -127,10 +127,10 @@ require_once(__DIR__ . '/layouts/header.php')
                   <?= $product['vendor_code'] ?>
                 </td>
                 <td class='p-read__table-td'>
-                  編集
+                  <a href="./update.php?id=<?= $product['id'] ?>">編集</a>
                 </td>
                 <td class='p-read__table-td'>
-                  削除
+                  <a href="./delete.php?id=<?= $product['id'] ?>">削除</a>
                 </td>
               </tr>
             <?php endforeach; ?>
