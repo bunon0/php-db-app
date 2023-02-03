@@ -180,39 +180,13 @@
 
 .p-create__form {
 	margin-top: 4rem;
-	width: 100%;
 }
 
-.p-create__form-part:not(:first-of-type) {
-	margin-top: 1.6rem;
-}
-
-.p-create__form-input {
-	display: inline-block;
-	width: 100%;
-	padding: 0.8rem 1.6rem;
-	margin-top: 0.4rem;
-}
-
-.p-create__form-select {
-	display: inline-block;
-	width: 100%;
-	padding: 0.8rem 1.6rem;
-	margin-top: 0.4rem;
-}
-
-.p-create__form-btn-wrapper {
+/*
+* update-page
+*/
+.p-update__message {
 	text-align: center;
-	margin-top: 3rem;
-}
-
-.p-create__form-submit {
-	display: inline-block;
-	background-color: var(--c-secondary);
-	color: var(--c-base);
-	padding: 0.8rem 1.2rem;
-	width: min(100%, 280px);
-	border-radius: 0.2rem;
-	border: none;
-	font-size: 1.8rem;
+	margin-top: 4rem;
+	font-size: 2rem;
 }
