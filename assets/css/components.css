@@ -1,0 +1,40 @@
+/*
+* Form
+*/
+.c-form {
+	width: 100%;
+}
+
+.c-form__part:not(:first-of-type) {
+	margin-top: 1.6rem;
+}
+
+.c-form__input {
+	display: inline-block;
+	width: 100%;
+	padding: 0.8rem 1.6rem;
+	margin-top: 0.4rem;
+}
+
+.c-form__select {
+	display: inline-block;
+	width: 100%;
+	padding: 0.8rem 1.6rem;
+	margin-top: 0.4rem;
+}
+
+.c-form__btn-wrapper {
+	text-align: center;
+	margin-top: 3rem;
+}
+
+.c-form__submit {
+	display: inline-block;
+	background-color: var(--c-secondary);
+	color: var(--c-base);
+	padding: 0.8rem 1.2rem;
+	width: min(100%, 280px);
+	border-radius: 0.2rem;
+	border: none;
+	font-size: 1.8rem;
+}

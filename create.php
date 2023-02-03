@@ -56,26 +56,26 @@ require_once(__DIR__ . '/layouts/header.php')
             戻る
           </button>
         </div>
-        <form action="./create.php" class="p-create__form" method="post">
-          <div class="p-create__form-part">
-            <label for="product_code" class="p-create__form-label">商品コード</label>
-            <input type="number" class="p-create__form-input" id="product_code" name="product_code" min=0 max=10000000000 required>
+        <form action="./create.php" class="c-form" method="post">
+          <div class="c-form__part">
+            <label for="product_code" class="c-form__label">商品コード</label>
+            <input type="number" class="c-form__input" id="product_code" name="product_code" min=0 max=10000000000 required>
           </div>
-          <div class="p-create__form-part">
-            <label for="product_name" class="p-create__form-label">商品名</label>
-            <input type="text" class="p-create__form-input" id="product_name" name="product_name" maxlength="50" required>
+          <div class="c-form__part">
+            <label for="product_name" class="c-form__label">商品名</label>
+            <input type="text" class="c-form__input" id="product_name" name="product_name" maxlength="50" required>
           </div>
-          <div class="p-create__form-part">
-            <label for="price" class="p-create__form-label">単価</label>
-            <input type="text" class="p-create__form-input" id="price" name="price" min=0 max=10000000000 required>
+          <div class="c-form__part">
+            <label for="price" class="c-form__label">単価</label>
+            <input type="text" class="c-form__input" id="price" name="price" min=0 max=10000000000 required>
           </div>
-          <div class="p-create__form-part">
-            <label for="stock_quantity" class="p-create__form-label">在庫数</label>
-            <input type="text" class="p-create__form-input" id="stock_quantity" name="stock_quantity" min=0 max=10000000000 required>
+          <div class="c-form__part">
+            <label for="stock_quantity" class="c-form__label">在庫数</label>
+            <input type="text" class="c-form__input" id="stock_quantity" name="stock_quantity" min=0 max=10000000000 required>
           </div>
-          <div class="p-create__form-part">
-            <label for="vendor_code" class="p-create__form-label">仕入先コード</label>
-            <select class="p-create__form-select" name="vendor_code" id="vendor_code" min=0 max=10000000000 required>
+          <div class="c-form__part">
+            <label for="vendor_code" class="c-form__label">仕入先コード</label>
+            <select class="c-form__select" name="vendor_code" id="vendor_code" min=0 max=10000000000 required>
               <option value="" disabled selected>選択してください</option>
               <?php foreach ($vendors as $vendor) {
                 echo "
@@ -85,8 +85,8 @@ require_once(__DIR__ . '/layouts/header.php')
               ?>
             </select>
           </div>
-          <div class="p-create__form-btn-wrapper">
-            <button type="submit" class="p-create__form-submit" name="submit" value="register">登録</button>
+          <div class="c-form__btn-wrapper">
+            <button type="submit" class="c-form__submit" name="submit" value="register">登録</button>
           </div>
         </form>
       </div>

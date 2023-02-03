@@ -19,6 +19,7 @@ $url = $get_domain . $get_uri;
   <!-- Original CSS -->
   <link rel="stylesheet" href="../assets/css/common.css">
   <link rel="stylesheet" href="../assets/css/layouts.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/page.css">
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/566b522bd3.js" crossorigin="anonymous"></script>
