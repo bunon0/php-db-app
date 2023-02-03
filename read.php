@@ -11,6 +11,14 @@ try {
   } else {
     $message = null;
   }
+  // delete_countパラメータが渡された時の処理
+  if (!empty($_GET['delete_count'])) {
+    $count = new FormSanitize($_GET['delete_count'], ENT_QUOTES, 'UTF-8');
+    $count = $count->sanitize();
+    $message = "商品情報を{$count}件削除しました。";
+  } else {
+    $message = null;
+  }
 
 
   // GET - sortパラメータが渡された時の処理
@@ -130,7 +138,7 @@ require_once(__DIR__ . '/layouts/header.php')
                   <a class="p-read__btn-edit" href="./update.php?id=<?= $product['id'] ?>">編集</a>
                 </td>
                 <td class='p-read__table-td'>
-                  <a class="p-read__btn-delete" href="./delete.php?id=<?= $product['id'] ?>">削除</a>
+                  <a class="p-read__btn-delete" href="./delete.php?id=<?= $product['id'] ?>" onclick="confirm('本当に削除してもよろしいですか？')">削除</a>
                 </td>
               </tr>
             <?php endforeach; ?>
